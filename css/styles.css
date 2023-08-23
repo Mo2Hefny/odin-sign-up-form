@@ -47,8 +47,18 @@ body {
   background: transparent;
 }
 
-.sign-up-img > * {
+.sign-up-img > a {
   display: none;
+}
+
+.sign-up-img .logo{
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  background: #090f1660;
+  position: absolute;
+  top: 28%;
+  font-size: 3rem;
 }
 
 .sign-up-img::before {
@@ -283,16 +293,6 @@ input:not(:placeholder-shown) ~ span {
   .sign-up-img > * {
     display: inline-block;
   }
-
-  .sign-up-img .logo{
-    width: 100%;
-    padding: 2rem;
-    text-align: center;
-    background: #090f1660;
-    position: absolute;
-    top: 25%;
-    font-size: 3rem;
-  }
   
   .move-down-btn {
     position: absolute;
@@ -320,6 +320,7 @@ input:not(:placeholder-shown) ~ span {
   }
 
   .move-down-btn > span {
+    background: url(../img/expand_more.png);
     position: absolute;
     bottom: -10%;
     left: 50%;
