@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Sign-up Form</title>
+  </head>
+  <body>
+    <div class="sign-up-container">
+      <div class="sign-up-img">
+        <div class="logo"></div>
+      </div>
+      <div class="form-container">
+        <div class="form-header">
+          <p>
+            This is not a real online service! You know you need something like
+            this in your life to help you realize your deepest dreams.
+          </p>
+          <p>
+            Sign up
+            <i>now</i>
+            to get started.
+          </p>
+        </div>
+        <form action="#" method="post">
+          <div class="form">
+            <h2 class="form-title">Sign up</h2>
+            <div class="input-box">
+              <div class="input-container">
+                <input type="text" name="fname" placeholder=" " required spellcheck="false" />
+                <span>First Name</span>
+                <div class="error"></div>
+              </div>
+              <div class="input-container">
+                <input type="text" name="lname" placeholder=" " required spellcheck="false" />
+                <span>Last Name</span>
+                <div class="error"></div>
+              </div>
+              <div class="input-container">
+                <input type="email" name="email" placeholder=" " required />
+                <span>e-mail</span>
+                <div class="error"></div>
+              </div>
+              <div class="input-container">
+                <input type="tel" name="phone" placeholder=" " />
+                <span>phone</span>
+                <div class="error"></div>
+              </div>
+              <div class="input-container">
+                <input type="password" name="password" placeholder=" " />
+                <span>Password</span>
+                <div class="error"></div>
+              </div>
+              <div class="input-container">
+                <input type="password" name="cpassword" placeholder=" " />
+                <span>Confirm Password</span>
+                <div class="error"></div>
+              </div>
+            </div>
+          </div>
+          <div id="submit">
+            <button type="submit" id="sign-up-btn">Create Account</button>
+            <p class="login">
+              Already have an account? <a href="#" class="primary">Log in</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
