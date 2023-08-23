@@ -2,7 +2,7 @@
   --text: #e5edf5;
   --background: #090f16;
   --primary: #fcb221;
-  --secondary: #1C242C;
+  --secondary: #1c242c;
   --accent: #31c7f4;
   --h1: 3rem;
   --h2: 2rem;
@@ -17,6 +17,7 @@
   margin: 0;
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -29,7 +30,7 @@ body {
   margin: 0 5%;
 }
 
-.sign-up-container{
+.sign-up-container {
   width: 100%;
   max-width: 1500px;
   min-height: 80vh;
@@ -37,8 +38,7 @@ body {
   overflow: hidden;
   display: grid;
   grid-template-columns: 400px 1fr;
-  box-shadow: 1px 1px 10px #000000,
-  -1px -1px 5px #f7f7f780;
+  box-shadow: 1px 1px 10px #000000, -1px -1px 5px #f7f7f780;
 }
 
 .sign-up-img {
@@ -47,7 +47,11 @@ body {
   background: transparent;
 }
 
-.sign-up-img::before  {
+.sign-up-img > * {
+  display: none;
+}
+
+.sign-up-img::before {
   position: absolute;
   z-index: -1;
   content: "";
@@ -111,7 +115,6 @@ body {
 
 .form {
   padding: 2rem 3rem;
-  padding-right: 6rem;
   width: 100%;
   background: var(--secondary);
   box-shadow: 0 1px 10px #000000;
@@ -125,26 +128,28 @@ body {
 .input-box {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px 3rem;
+  max-width: 600px;
+  gap: 12px 1rem;
 }
 
 .input-container {
   position: relative;
   height: 70px;
+  max-width: 190px;
+  min-width: 170px;
 }
 
 .input-container > input {
   outline: none;
   box-sizing: border-box;
   height: 32px;
-  width: 190px;
+  width: 100%;
   background: transparent;
   border: 2px solid transparent;
   border-bottom: 2px solid var(--accent);
   transition: all 0.3s ease, border-radius 0.3s ease-out;
   padding: 4px 8px;
 }
-
 
 .input-container > span {
   padding: 2px 4px;
@@ -201,7 +206,135 @@ input:not(:placeholder-shown) ~ span {
 .primary {
   color: var(--primary);
 }
-.login > a{
+.login > a {
   text-decoration: none;
   cursor: pointer;
+}
+
+.error {
+  padding: 3px 0;
+  font-size: var(--small);
+  font-weight: 500;
+  color: var(--primary);
+}
+
+@media (max-width: 60em) {
+  :root {
+    --h1: 2.3rem;
+    --h2: 1.5rem;
+    --subtitles: 20px;
+    --p: 14px;
+    --small: 12px;
+  }
+  .sign-up-container {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .sign-up-img::before {
+    background-size: cover;
+    background-position: center;
+    animation-iteration-count: 0;
+  }
+
+  .form,
+  .form-header,
+  #submit {
+    padding: 2rem;
+  }
+
+  .input-container {
+    min-width: 120px;
+  }
+}
+@media (max-width: 40em) {
+  :root {
+    --subtitles: 1.1rem;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .sign-up-img::before {
+    background-size: cover;
+    background-position: center;
+    animation-iteration-count: 0;
+  }
+
+  .sign-up-container {
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-container {
+    min-height: 100vh;
+  }
+
+  .sign-up-img {
+    min-height: 100vh;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sign-up-img > * {
+    display: inline-block;
+  }
+
+  .sign-up-img .logo{
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    background: #090f1660;
+    position: absolute;
+    top: 25%;
+    font-size: 3rem;
+  }
+  
+  .move-down-btn {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    translate: -50%;
+    scale: 200%;
+    height: 30px;
+    width: 24px;
+    animation-name: traverse-y;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes traverse-y {
+    0% {
+      bottom: 8%;
+    }
+    80% {
+      bottom: 12%;
+    }
+    100% {
+      bottom: 8%;
+    }
+  }
+
+  .move-down-btn > span {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    translate: -50%;
+  }
+
+  .move-down-btn > span:nth-child(2) {
+    bottom: 10%;
+  }
+  .move-down-btn > span:nth-child(1) {
+    bottom: 30%;
+  }
+
+  #submit {
+    align-self: center;
+    padding: 0 1rem;
+  }
 }
